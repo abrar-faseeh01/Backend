@@ -11,4 +11,4 @@ import { DB_NAME } from "../constants.js";
     process.exit(1)
   }
 };
-export default connectDB
+export default connectDB        
