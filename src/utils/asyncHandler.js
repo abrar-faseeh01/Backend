@@ -1,7 +1,7 @@
 //USING PROMISES
-
+// What is the use of it? -> So that we don't have to write promises or try-catch again and again
 const asyncHandler=(requestHandler)=>{
-    (req,res,next)=>{
+    return (req,res,next)=>{
         Promise.resolve(requestHandler(req,res,next)).catch((err)=>next(err))
     }
 }
