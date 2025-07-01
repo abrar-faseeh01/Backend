@@ -168,7 +168,7 @@ const refreshAccessToken = asyncHandler(async(req,res)=>{
    }
    try {
      const decodedToken = jwt.verify(incomingRefreshToken, process.env.REFRESH_TOKEN_SECRET)
-     const user = User.findById(decodedToken?._id)
+     const user = await User.findById(decodedToken?._id)
   
      if(!user){
       throw new ApiError(401, "unauthorized request")
