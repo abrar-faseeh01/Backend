@@ -161,6 +161,7 @@ const logoutUser = asyncHandler(async(req,res)=>{
 })
 
 
+// Generate new access token using refresh token
 const refreshAccessToken = asyncHandler(async(req,res)=>{
    const incomingRefreshToken = req.cookies.refreshToken || req.body.refreshToken
    if(!incomingRefreshToken){
@@ -201,6 +202,8 @@ const refreshAccessToken = asyncHandler(async(req,res)=>{
 }
 
 })
+
+
 
 export {
   loginUser, logoutUser, refreshAccessToken, registerUser
